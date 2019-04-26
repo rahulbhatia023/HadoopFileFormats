@@ -2,7 +2,6 @@ package com.rahul.hadoop.fileformats.orc;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SaveMode;
 import org.apache.spark.sql.SparkSession;
 import org.apache.spark.sql.types.StructType;
 
@@ -17,9 +16,9 @@ public class OrcFileWriter {
         Dataset<Row> dataFrame = sparkSession.read()
                 .option("header", "true").option("inferSchema", "true")
                 .schema(schema)
-                .csv("C:\\Rahul_Bhatia\\intellij_workspace\\HadoopFileFormats\\src\\main\\resources\\userdata.csv");
+                .csv("/home/rahulbhatia/Rahul_Bhatia/intellij_workspace/HadoopFileFormats/src/main/resources/userdata.csv");
 
         dataFrame.show();
-        //dataFrame.write().orc("userdata.csv");
+        dataFrame.write().orc("./userdata.orc/");
     }
 }

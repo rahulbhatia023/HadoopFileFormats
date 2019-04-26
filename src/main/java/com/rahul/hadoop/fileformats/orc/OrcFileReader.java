@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class OrcFileReader {
     public static void main(String[] args) throws IOException {
-        Reader orcReader = OrcFile.createReader(new Path("C:\\Rahul_Bhatia\\intellij_workspace\\HadoopFileFormats\\src\\main\\resources\\userdata.orc"),
+        Reader orcReader = OrcFile.createReader(new Path("/home/rahulbhatia/Rahul_Bhatia/intellij_workspace/HadoopFileFormats/src/main/resources/userdata.orc"),
                 OrcFile.readerOptions(new Configuration(true)));
 
         String compressionCodec = orcReader.getCompressionKind().name();
