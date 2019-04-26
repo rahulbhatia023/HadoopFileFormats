@@ -1,4 +1,4 @@
-package com.rahul.hadoop.fileformats.orc.Reader;
+package com.rahul.hadoop.fileformats.orc;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
