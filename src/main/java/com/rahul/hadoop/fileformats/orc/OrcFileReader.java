@@ -32,10 +32,10 @@ public class OrcFileReader {
         VectorizedRowBatch batch = orcReader.getSchema().createRowBatch();
 
         while (rows.nextBatch(batch)) {
-            LongColumnVector id = (LongColumnVector) batch.cols[1];
-            BytesColumnVector firstName = (BytesColumnVector) batch.cols[2];
-            BytesColumnVector lastName = (BytesColumnVector) batch.cols[3];
-            BytesColumnVector email = (BytesColumnVector) batch.cols[4];
+            LongColumnVector id = (LongColumnVector) batch.cols[0];
+            BytesColumnVector firstName = (BytesColumnVector) batch.cols[1];
+            BytesColumnVector lastName = (BytesColumnVector) batch.cols[2];
+            BytesColumnVector email = (BytesColumnVector) batch.cols[3];
 
             for (int r = 0; r < batch.size; r++) {
                 System.out.println("id: " + id.vector[r] +
